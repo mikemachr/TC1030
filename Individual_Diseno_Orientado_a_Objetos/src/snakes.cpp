@@ -25,9 +25,12 @@ public:
 //Instrucciones para los jugadores, solo se muestra 1 vez por partida
         cout<<"Press C to continue next turn, or E to end the game:"<<endl;
      while(1){
-/*Aqui se comprueban las condiciones de la fin del juego, que son 3: jugador 1 gana, jugador 2 gana, o alguien se rinde, si se cumple 
+/*Aqui se comprueban las condiciones de la fin del juego, que son 4:exceso de turnos,  jugador 1 gana, jugador 2 gana, o alguien se rinde, si se cumple 
 alguna, se verifica que jugador tiene la mas alta puntuacion, se le felicita, y se imprime game over,ademas de romper el while 
 que controla la totalidad del juego*/
+        if(turn>100){
+            cout<<"The maximum number of turns has been reached..."<<endl;
+            break;}
         if(p1_position>=30||p2_position>=30||this_turn==0){
             cout<<" -- GAME OVER --"<<endl<<endl;
             if (p1_position>p2_position){
