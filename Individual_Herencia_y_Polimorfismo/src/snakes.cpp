@@ -2,7 +2,7 @@
 #include "typeA.h"
 #include "typeM.h"
 int main(){
-    typeA a(30,10,5,3,5,2,30,"A");
+    typeM a(30,10,5,3,5,2,30,"A");
     cin.get();
     /*Tiles: número de casillas para el tablero
 Snakes: número de serpientes a colocar en el tablero
