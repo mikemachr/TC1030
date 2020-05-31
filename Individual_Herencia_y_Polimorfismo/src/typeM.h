@@ -7,18 +7,6 @@ public:
     typeM(int, int,int,int,int,int,int,string);
     typeM();
     void start(typeM game);
-
-
-    void fillBoard(int nSnakes,int nLadders){
-        for (int i = 0; i < board.size(); i++){
-            board[i]="N";
-        }
-    }
-    vector<string> setBoard(int _size){
-        board.resize(_size);
-        fillBoard(snakes,ladders);
-        return board;
-    }
 };
 
 typeM::typeM(int _tiles, int _snakes, int _ladders,  int _penalty, int _reward, int _n_players, int _turns, string _game_type){
@@ -30,7 +18,7 @@ typeM::typeM(int _tiles, int _snakes, int _ladders,  int _penalty, int _reward, 
     n_players=_n_players;
     turns=_turns;
     game_type=_game_type;
-    board=setBoard(_tiles);
+    board=setBoard();
 }
 
 typeM::typeM(){
@@ -42,7 +30,7 @@ typeM::typeM(){
     n_players=2;
     turns=30;
     game_type="A";
-    board=setBoard(tiles);
+    board=setBoard();
 }
 
 #endif
