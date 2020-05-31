@@ -15,10 +15,11 @@ class MyGame{
     vector<string> board;
 
     void fillBoard(){
-        
+        int n;
         for (int i = 0; i < board.size(); i++){
             board[i]="N";
         }
+                
     }
     vector<string> setBoard(){
         board.resize(tiles);
