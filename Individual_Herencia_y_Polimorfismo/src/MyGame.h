@@ -65,7 +65,7 @@ void MyGame::play(){
     while(1){
         disp(positions[currentP],players[currentP]);
         turns++;
-        if (turns==maxTurns){
+        if (turns==max_turns){
             cout<<"The maximum number of turns has been reached, game over"<<endl;
             break;
         }
