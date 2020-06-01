@@ -16,7 +16,8 @@ class MyGame{
     vector<string> setBoard();
     vector<string> setPlayers();
     void fillBoard();
-    string disp(int, string);
+    void disp(int, string);
+    void play();
 };
 vector<string> MyGame::setBoard(){
     board.resize(tiles);
@@ -42,17 +43,32 @@ void MyGame::fillBoard(){
     }
 
 
-string MyGame::disp(int position,string player){
+void MyGame::disp(int position,string player){
 
         string temp=board[position];
         board[position]=player;
-        for (int i = 0; i <9 ; i++){
+        for (int i = 0; i <(tiles-1) ; i++){
             cout<<board[i]<<"\t";
-            if (((i)%5==0)){
+            if (((i)%5==0)&&i!=0){
                 cout<<endl;
             } 
         }
+        cout<<endl<<endl<<endl;
         board[position]=temp;
-        return board[position];
+        //return board[position];
     }
+void MyGame::play(){
+    vector<int> positions;
+    int turns=1,currentP=0;
+    positions.resize(n_players);
+    while(1){
+        disp(positions[currentP],players[currentP]);
+        turns++;
+        if (turns==maxTurns){
+            cout<<"The maximum number of turns has been reached, game over"<<endl;
+            break;
+        }
+        
+    }
+}
 #endif

@@ -35,6 +35,6 @@ typeM::typeM(){
     players=setPlayers();
 }
 void typeM::start(){
-    disp(1,"pito");
+    play();
 }
 #endif
