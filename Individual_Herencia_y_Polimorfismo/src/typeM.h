@@ -16,7 +16,7 @@ typeM::typeM(int _tiles, int _snakes, int _ladders,  int _penalty, int _reward, 
     penalty=_penalty;
     reward=_reward;
     n_players=_n_players;
-    maxTurns=_maxTurns;
+    max_turns=_maxTurns;
     game_type=_game_type;
     board=setBoard();
     players=setPlayers();
@@ -29,7 +29,7 @@ typeM::typeM(){
     penalty=3;
     reward=3;
     n_players=2;
-    maxTurns=30;
+    max_turns=30;
     game_type="A";
     board=setBoard();
     players=setPlayers();

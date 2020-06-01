@@ -9,10 +9,11 @@ using namespace std;
 class MyGame{
     protected:
     
-    int tiles,snakes,ladders,penalty,reward,n_players,maxTurns;
+    int tiles,snakes,ladders,penalty,reward,n_players,max_turns;
     
     string game_type;
     vector<string> board,players;
+
     vector<string> setBoard();
     vector<string> setPlayers();
     void fillBoard();

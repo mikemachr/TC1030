@@ -16,7 +16,7 @@ typeA::typeA(int _tiles, int _snakes, int _ladders,  int _penalty, int _reward, 
     penalty=_penalty;
     reward=_reward;
     n_players=_n_players;
-    maxTurns=_maxTurns;
+    max_turns=_maxTurns;
     game_type=_game_type;
 }
 #endif
