@@ -1,30 +1,41 @@
 #ifndef SRC_MyGame_H
 #define SRC_MyGame_H
-using namespace std;
 #include <vector>
-#include <cstdlib>
-#include <iostream>
-#include <ctime>
-
+#include "dado.h"
+using namespace std;
 class MyGame{
+    public:
+    MyGame(){
+    tiles=0;
+    snakes=0;
+    ladders=0;
+    penalty=0;
+    reward=0;
+    n_players=0;
+    max_turns=0;
+    game_type="N";
+    board=setBoard();
+    players=setPlayers();
+    }
+    virtual int play();    
+
     protected:
     
     int tiles,snakes,ladders,penalty,reward,n_players,max_turns;
-    
     string game_type;
     vector<string> board,players;
-
     vector<string> setBoard();
     vector<string> setPlayers();
     void fillBoard();
-    void disp(int, string);
-    void play();
+    string disp(int, string);   
+
 };
 vector<string> MyGame::setBoard(){
     board.resize(tiles);
     fillBoard();
     return board;
     }
+
 vector<string> MyGame:: setPlayers(){
     players.resize(n_players);
     string n;
@@ -37,39 +48,46 @@ vector<string> MyGame:: setPlayers(){
 }
 
 void MyGame::fillBoard(){
-        int n;
+        int allowed=board.size()-2;
         for (int i = 0; i < board.size(); i++){
             board[i]="N";
-        }         
+        }
+        for (int  i = 0; i < snakes; i++){
+            int candidate;
+            srand(time(0));
+            candidate=(rand() % allowed) + 1;
+            if (board[candidate]!="S"){
+                board[candidate]="S";}
+               else{i--;}
+        }
+        for (int  i = 0; i < ladders; i++){
+            int candidate;
+            srand(time(0));
+            candidate=(rand() % allowed) + 1;
+            if (board[candidate]!="S"&&board[candidate]!="L"){
+                board[candidate]="L";}
+               else{i--;}
+        }                 
     }
 
 
-void MyGame::disp(int position,string player){
-
+string MyGame::disp(int position,string player){
+        if(position>(board.size()-1)){
+            position=board.size()-1;
+        }
         string temp=board[position];
         board[position]=player;
-        for (int i = 0; i <(tiles-1) ; i++){
-            cout<<board[i]<<"\t";
+        for (int i = 0; i <(tiles) ; i++){
             if (((i)%5==0)&&i!=0){
                 cout<<endl;
-            } 
+            }
+            cout<<board[i]<<"\t"; 
         }
         cout<<endl<<endl<<endl;
         board[position]=temp;
-        //return board[position];
+        return board[position];
     }
-void MyGame::play(){
-    vector<int> positions;
-    int turns=1,currentP=0;
-    positions.resize(n_players);
-    while(1){
-        disp(positions[currentP],players[currentP]);
-        turns++;
-        if (turns==max_turns){
-            cout<<"The maximum number of turns has been reached, game over"<<endl;
-            break;
-        }
-        
-    }
+int MyGame::play(){
+    return 0;
 }
 #endif
