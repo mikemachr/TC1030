@@ -5,20 +5,7 @@
 using namespace std;
 class MyGame{
     public:
-    MyGame(){
-    tiles=0;
-    snakes=0;
-    ladders=0;
-    penalty=0;
-    reward=0;
-    n_players=0;
-    max_turns=0;
-    game_type="N";
-    board=setBoard();
-    players=setPlayers();
-    }
     virtual int play()=0;    
-
     protected:
     
     int tiles,snakes,ladders,penalty,reward,n_players,max_turns;
