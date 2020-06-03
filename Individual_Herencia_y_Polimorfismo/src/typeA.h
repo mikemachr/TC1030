@@ -6,9 +6,7 @@ class typeA: public MyGame{
 public:
     typeA(int, int,int,int,int,int,int);
     typeA();
-    int play();     
-    void start();
-   
+    int play();        
 };
 
 typeA::typeA(int _tiles, int _snakes, int _ladders,  int _penalty, int _reward, int _n_players, int _maxTurns){
@@ -81,7 +79,4 @@ int typeA::play(){
 }
 
 
-void typeA::start(){
-    play();
-}
 #endif

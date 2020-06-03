@@ -3,13 +3,13 @@
 #include "MyGame.h"
 int main(){
     typeA ANormal;
-    ANormal.start();
+    ANormal.play();
     typeA ACustom(50,3,3,3,5,3,30);
-    ACustom.start();
+    ACustom.play();
     typeM BNormal;
-    BNormal.start();
+    BNormal.play();
     typeM BCustom(10,2,3,3,5,2,3);
-    BCustom.start();
+    BCustom.play();
     /*apundator para demostrar el polimorfismo funcionando, debbugear con un breakpoint en 
     la linea 19 y observar el contenido de el arreglo juegos*/
     MyGame* juegos[4];

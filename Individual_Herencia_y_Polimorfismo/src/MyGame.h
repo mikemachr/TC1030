@@ -17,7 +17,7 @@ class MyGame{
     board=setBoard();
     players=setPlayers();
     }
-    virtual int play();    
+    virtual int play()=0;    
 
     protected:
     
@@ -87,7 +87,7 @@ string MyGame::disp(int position,string player){
         board[position]=temp;
         return board[position];
     }
-int MyGame::play(){
+/*int MyGame::play(){
     return 0;
-}
+}*/
 #endif

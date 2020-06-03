@@ -7,7 +7,7 @@ public:
     typeM(int, int,int,int,int,int,int);
     typeM();
     int play();
-    void start();
+
 };
 
 typeM::typeM(int _tiles, int _snakes, int _ladders,  int _penalty, int _reward, int _n_players, int _maxTurns){
@@ -34,9 +34,6 @@ typeM::typeM(){
     game_type="M";
     board=setBoard();
     players=setPlayers();
-}
-void typeM::start(){
-    play();
 }
 
 
