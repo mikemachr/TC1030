@@ -74,7 +74,5 @@ string MyGame::disp(int position,string player){
         board[position]=temp;
         return board[position];
     }
-/*int MyGame::play(){
-    return 0;
-}*/
+
 #endif
